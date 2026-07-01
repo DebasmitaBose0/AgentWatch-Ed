@@ -55,6 +55,13 @@ app.add_typer(server_app)
 app.add_typer(safety_app)
 
 
+@safety_app.command(name="play")
+def safety_playground():
+    """Start an interactive command line loop to test safety policies."""
+    from agentwatch.cli.shield_play import start_safety_playground
+    start_safety_playground()
+
+
 _IN_REPL = False
 
 
