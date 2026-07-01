@@ -55,6 +55,28 @@ app.add_typer(server_app)
 app.add_typer(safety_app)
 
 
+@app.command(name="diagnose")
+def diagnose_env():
+    """Run dependency and environment compatibility checks."""
+    from agentwatch.cli.diagnose import run_diagnostics
+    
+    console.print("[bold cyan]Running AgentWatch Diagnostics...[/bold cyan]")
+    report = run_diagnostics()
+    
+    console.print(f"[bold]Status:[/bold] {report['status']}")
+    
+    console.print("\n[bold]Installed Packages:[/bold]")
+    for pkg, ver in report["packages"].items():
+        console.print(f"  - {pkg}: {ver}")
+        
+    if report["conflicts"]:
+        console.print("\n[bold red]Conflicts/Warnings detected:[/bold]")
+        for conflict in report["conflicts"]:
+            console.print(f"  [red]![/red] {conflict}")
+    else:
+        console.print("\n[bold green]No dependency conflicts detected![/bold green]")
+
+
 _IN_REPL = False
 
 
