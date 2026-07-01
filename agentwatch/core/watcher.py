@@ -249,6 +249,8 @@ class GenericAdapter:
         # CMP-003/004: scrub PII/PHI from tool-call payloads before they are
         # published and persisted. Opt-in to avoid the cost when not required.
         self._redact = redact
+        from agentwatch.core.cache import SemanticCache
+        self._cache = SemanticCache(threshold=0.75)
 
     def _maybe_redact(self, tool_call: ToolCallData) -> ToolCallData:
         """Redact PII/PHI from a tool call when redaction is enabled.
@@ -376,6 +378,20 @@ class GenericAdapter:
                             exc,
                         )
 
+                cache_key = f"{method_name}:{str(args)}:{str(sorted(kwargs.items()))}"
+                cached_res, score = self._cache.lookup(cache_key)
+                if cached_res is not None:
+                    await self._async_emit(
+                        EventType.AGENT_START,
+                        metadata={"method": method_name, "step": self._step, "cached": True},
+                    )
+                    await self._async_emit(
+                        EventType.AGENT_END,
+                        status=ExecutionStatus.SUCCESS,
+                        metadata={"method": method_name, "cached": True, "similarity_score": score},
+                    )
+                    return cached_res
+
                 # Use await so HTTP forwarding completes before the caller returns.
                 await self._async_emit(
                     EventType.AGENT_START,
@@ -383,6 +399,7 @@ class GenericAdapter:
                 )
                 try:
                     result = await original(*args, **kwargs)
+                    self._cache.store(cache_key, result)
                     _dur = (_time.monotonic() - _t0) * 1000
                     self._exec_logger.log_execution_complete("success", _dur)
                     await self._async_emit(
@@ -467,12 +484,27 @@ class GenericAdapter:
                         exc,
                     )
 
+            cache_key = f"{method_name}:{str(args)}:{str(sorted(kwargs.items()))}"
+            cached_res, score = self._cache.lookup(cache_key)
+            if cached_res is not None:
+                self._emit_safely(
+                    EventType.AGENT_START,
+                    metadata={"method": method_name, "step": self._step, "cached": True},
+                )
+                self._emit_safely(
+                    EventType.AGENT_END,
+                    status=ExecutionStatus.SUCCESS,
+                    metadata={"method": method_name, "cached": True, "similarity_score": score},
+                )
+                return cached_res
+
             self._emit_safely(
                 EventType.AGENT_START,
                 metadata={"method": method_name, "step": self._step},
             )
             try:
                 result = original(*args, **kwargs)
+                self._cache.store(cache_key, result)
                 _dur = (_time.monotonic() - _t0) * 1000
                 self._exec_logger.log_execution_complete("success", _dur)
                 self._emit_safely(
