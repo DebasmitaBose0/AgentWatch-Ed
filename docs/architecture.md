@@ -57,3 +57,12 @@ graph TD
    - If **BLOCKED**, an `AgentWatchBlockedError` is raised, stopping the threat before damage occurs.
 4. **Publishing**: An `AGENT_START` or `TOOL_CALL` event is pushed to the Event Bus.
 5. **Consumption**: Trace Collector updates the active session; alerting engine posts to Slack/PagerDuty.
+
+---
+
+## Detailed Manuals & Guides
+To deep-dive into specific sub-systems, please refer to the following resources:
+- [Detailed Architecture Internals](file:///d:/AgentWatch-Ed/AgentWatch/docs/architecture_detailed.md)
+- [Developer Setup Manual](file:///d:/AgentWatch-Ed/AgentWatch/docs/developer_setup.md)
+- [Custom Adapters Tutorial](file:///d:/AgentWatch-Ed/AgentWatch/docs/custom_adapters_tutorial.md)
+- [Extended Getting Started Guide](file:///d:/AgentWatch-Ed/AgentWatch/docs/getting_started_extended.md)
