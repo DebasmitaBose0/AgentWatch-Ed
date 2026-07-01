@@ -298,6 +298,7 @@ function SafetyPanel({ blockedEvents, loading }: { blockedEvents: AgentEvent[]; 
 }
 
 export default function DashboardPage() {
+  const router = useRouter()
   const { data: summary, mutate: refreshSummary, isLoading: summaryLoading } = useSWR<DashboardSummary>(`${API_BASE}/dashboard/summary`, fetcher, { refreshInterval: 15000 })
   const { data: sessionsData, mutate: refreshSessions, isLoading: sessionsLoading } = useSWR<{ sessions: AgentSession[]; total: number }>(`${API_BASE}/sessions?limit=20`, fetcher, { refreshInterval: 15000 })
   const { data: blockedData, isLoading: blockedLoading } = useSWR<{ blocked_events: AgentEvent[]; total: number }>(`${API_BASE}/safety/blocked?limit=20`, fetcher, { refreshInterval: 15000 })
@@ -330,10 +331,15 @@ export default function DashboardPage() {
             <div className="text-xs uppercase tracking-[0.32em] text-zinc-500">AgentWatch</div>
             <h1 className="text-2xl font-semibold text-white">Reliability, safety, and observability</h1>
           </div>
-          <button onClick={() => { refreshSummary(); refreshSessions() }} aria-label="Refresh dashboard data" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 transition hover:bg-white/10 hover:text-white">
-            <RefreshCw size={14} />
-            Refresh
-          </button>
+          <div className="flex items-center gap-3">
+            <button onClick={() => router.push('/trajectory_visualizer')} className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 transition hover:bg-white/10 hover:text-white">
+              Loops Visualizer
+            </button>
+            <button onClick={() => { refreshSummary(); refreshSessions() }} aria-label="Refresh dashboard data" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 transition hover:bg-white/10 hover:text-white">
+              <RefreshCw size={14} />
+              Refresh
+            </button>
+          </div>
         </div>
       </header>
 
