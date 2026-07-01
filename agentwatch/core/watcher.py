@@ -249,6 +249,8 @@ class GenericAdapter:
         # CMP-003/004: scrub PII/PHI from tool-call payloads before they are
         # published and persisted. Opt-in to avoid the cost when not required.
         self._redact = redact
+        from agentwatch.core.rate_limiter import ClientRateLimiter
+        self._rate_limiter = ClientRateLimiter(requests_per_minute=120)
 
     def _maybe_redact(self, tool_call: ToolCallData) -> ToolCallData:
         """Redact PII/PHI from a tool call when redaction is enabled.
@@ -338,6 +340,12 @@ class GenericAdapter:
                     {"step": self._step, "args_count": len(args), "kwargs": list(kwargs.keys())},
                 )
 
+                # ── Rate limiting ──
+                if not self._rate_limiter.acquire():
+                    logger.warning("Client-side rate limit hit for agent call: %s", method_name)
+                    import asyncio as _asyncio
+                    await _asyncio.sleep(0.05)
+
                 # ── Safety gate (async path — full check_event with approval) ──
                 if is_tool_like:
                     # Safety must evaluate the RAW payload — redacting first would
@@ -425,6 +433,11 @@ class GenericAdapter:
                 method_name,
                 {"step": self._step, "args_count": len(args), "kwargs": list(kwargs.keys())},
             )
+
+            # ── Rate limiting ──
+            if not self._rate_limiter.acquire():
+                logger.warning("Client-side rate limit hit for agent call: %s", method_name)
+                _time.sleep(0.05)
 
             # ── Safety gate (sync path — pattern match only, no approval) ──
             if is_tool_like:
