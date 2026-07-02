@@ -16,6 +16,12 @@
       "login": "DebasmitaBose0",
       "avatar_url": "https://github.com/DebasmitaBose0.png",
       "html_url": "https://github.com/DebasmitaBose0",
+      "contributions": 16
+    },
+    {
+      "login": "SHAURYASANYAL3",
+      "avatar_url": "https://github.com/SHAURYASANYAL3.png",
+      "html_url": "https://github.com/SHAURYASANYAL3",
       "contributions": 15
     },
     {
@@ -25,16 +31,16 @@
       "contributions": 14
     },
     {
-      "login": "SHAURYASANYAL3",
-      "avatar_url": "https://github.com/SHAURYASANYAL3.png",
-      "html_url": "https://github.com/SHAURYASANYAL3",
-      "contributions": 14
-    },
-    {
       "login": "Prateeks16",
       "avatar_url": "https://github.com/Prateeks16.png",
       "html_url": "https://github.com/Prateeks16",
       "contributions": 11
+    },
+    {
+      "login": "prachishelke1312",
+      "avatar_url": "https://github.com/prachishelke1312.png",
+      "html_url": "https://github.com/prachishelke1312",
+      "contributions": 7
     },
     {
       "login": "SakethSumanBathini",
@@ -49,15 +55,15 @@
       "contributions": 7
     },
     {
-      "login": "MayurKharat0390",
-      "avatar_url": "https://github.com/MayurKharat0390.png",
-      "html_url": "https://github.com/MayurKharat0390",
+      "login": "arcgod-design",
+      "avatar_url": "https://github.com/arcgod-design.png",
+      "html_url": "https://github.com/arcgod-design",
       "contributions": 5
     },
     {
-      "login": "prachishelke1312",
-      "avatar_url": "https://github.com/prachishelke1312.png",
-      "html_url": "https://github.com/prachishelke1312",
+      "login": "MayurKharat0390",
+      "avatar_url": "https://github.com/MayurKharat0390.png",
+      "html_url": "https://github.com/MayurKharat0390",
       "contributions": 5
     },
     {
@@ -65,12 +71,6 @@
       "avatar_url": "https://github.com/rishabhextra365-lang.png",
       "html_url": "https://github.com/rishabhextra365-lang",
       "contributions": 5
-    },
-    {
-      "login": "arcgod-design",
-      "avatar_url": "https://github.com/arcgod-design.png",
-      "html_url": "https://github.com/arcgod-design",
-      "contributions": 4
     },
     {
       "login": "speed-velocity",
@@ -82,6 +82,18 @@
       "login": "harika880",
       "avatar_url": "https://github.com/harika880.png",
       "html_url": "https://github.com/harika880",
+      "contributions": 2
+    },
+    {
+      "login": "nikhildhamdhere15",
+      "avatar_url": "https://github.com/nikhildhamdhere15.png",
+      "html_url": "https://github.com/nikhildhamdhere15",
+      "contributions": 2
+    },
+    {
+      "login": "AshutoshDash1999",
+      "avatar_url": "https://github.com/AshutoshDash1999.png",
+      "html_url": "https://github.com/AshutoshDash1999",
       "contributions": 2
     },
     {
@@ -157,18 +169,6 @@
       "contributions": 1
     },
     {
-      "login": "nikhildhamdhere15",
-      "avatar_url": "https://github.com/nikhildhamdhere15.png",
-      "html_url": "https://github.com/nikhildhamdhere15",
-      "contributions": 1
-    },
-    {
-      "login": "AshutoshDash1999",
-      "avatar_url": "https://github.com/AshutoshDash1999.png",
-      "html_url": "https://github.com/AshutoshDash1999",
-      "contributions": 1
-    },
-    {
       "login": "ankitasahu83964",
       "avatar_url": "https://github.com/ankitasahu83964.png",
       "html_url": "https://github.com/ankitasahu83964",
@@ -205,6 +205,6 @@
       "contributions": 1
     }
   ],
-  "updated_at": "2026-07-01T06:46:42Z",
+  "updated_at": "2026-07-02T15:44:27Z",
   "total": 34
 }
