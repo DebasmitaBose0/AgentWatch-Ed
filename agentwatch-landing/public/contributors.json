@@ -4,7 +4,25 @@
       "login": "sreerevanth",
       "avatar_url": "https://github.com/sreerevanth.png",
       "html_url": "https://github.com/sreerevanth",
-      "contributions": 45
+      "contributions": 46
+    },
+    {
+      "login": "pavsoss",
+      "avatar_url": "https://github.com/pavsoss.png",
+      "html_url": "https://github.com/pavsoss",
+      "contributions": 34
+    },
+    {
+      "login": "SakethSumanBathini",
+      "avatar_url": "https://github.com/SakethSumanBathini.png",
+      "html_url": "https://github.com/SakethSumanBathini",
+      "contributions": 26
+    },
+    {
+      "login": "DebasmitaBose0",
+      "avatar_url": "https://github.com/DebasmitaBose0.png",
+      "html_url": "https://github.com/DebasmitaBose0",
+      "contributions": 19
     },
     {
       "login": "anshul23102",
@@ -13,22 +31,16 @@
       "contributions": 17
     },
     {
-      "login": "DebasmitaBose0",
-      "avatar_url": "https://github.com/DebasmitaBose0.png",
-      "html_url": "https://github.com/DebasmitaBose0",
-      "contributions": 16
-    },
-    {
       "login": "SHAURYASANYAL3",
       "avatar_url": "https://github.com/SHAURYASANYAL3.png",
       "html_url": "https://github.com/SHAURYASANYAL3",
-      "contributions": 15
+      "contributions": 16
     },
     {
-      "login": "pavsoss",
-      "avatar_url": "https://github.com/pavsoss.png",
-      "html_url": "https://github.com/pavsoss",
-      "contributions": 14
+      "login": "arcgod-design",
+      "avatar_url": "https://github.com/arcgod-design.png",
+      "html_url": "https://github.com/arcgod-design",
+      "contributions": 12
     },
     {
       "login": "Prateeks16",
@@ -40,25 +52,13 @@
       "login": "prachishelke1312",
       "avatar_url": "https://github.com/prachishelke1312.png",
       "html_url": "https://github.com/prachishelke1312",
-      "contributions": 7
-    },
-    {
-      "login": "SakethSumanBathini",
-      "avatar_url": "https://github.com/SakethSumanBathini.png",
-      "html_url": "https://github.com/SakethSumanBathini",
-      "contributions": 7
+      "contributions": 9
     },
     {
       "login": "SHUBHAM2775",
       "avatar_url": "https://github.com/SHUBHAM2775.png",
       "html_url": "https://github.com/SHUBHAM2775",
       "contributions": 7
-    },
-    {
-      "login": "arcgod-design",
-      "avatar_url": "https://github.com/arcgod-design.png",
-      "html_url": "https://github.com/arcgod-design",
-      "contributions": 5
     },
     {
       "login": "MayurKharat0390",
@@ -71,6 +71,12 @@
       "avatar_url": "https://github.com/rishabhextra365-lang.png",
       "html_url": "https://github.com/rishabhextra365-lang",
       "contributions": 5
+    },
+    {
+      "login": "Human-Gechi",
+      "avatar_url": "https://github.com/Human-Gechi.png",
+      "html_url": "https://github.com/Human-Gechi",
+      "contributions": 2
     },
     {
       "login": "speed-velocity",
@@ -151,12 +157,6 @@
       "contributions": 1
     },
     {
-      "login": "Human-Gechi",
-      "avatar_url": "https://github.com/Human-Gechi.png",
-      "html_url": "https://github.com/Human-Gechi",
-      "contributions": 1
-    },
-    {
       "login": "Moresh-Mishra",
       "avatar_url": "https://github.com/Moresh-Mishra.png",
       "html_url": "https://github.com/Moresh-Mishra",
@@ -169,9 +169,21 @@
       "contributions": 1
     },
     {
+      "login": "annukumar123",
+      "avatar_url": "https://github.com/annukumar123.png",
+      "html_url": "https://github.com/annukumar123",
+      "contributions": 1
+    },
+    {
       "login": "ankitasahu83964",
       "avatar_url": "https://github.com/ankitasahu83964.png",
       "html_url": "https://github.com/ankitasahu83964",
+      "contributions": 1
+    },
+    {
+      "login": "NeuralImprint",
+      "avatar_url": "https://github.com/NeuralImprint.png",
+      "html_url": "https://github.com/NeuralImprint",
       "contributions": 1
     },
     {
@@ -193,6 +205,12 @@
       "contributions": 1
     },
     {
+      "login": "adityakryadav",
+      "avatar_url": "https://github.com/adityakryadav.png",
+      "html_url": "https://github.com/adityakryadav",
+      "contributions": 1
+    },
+    {
       "login": "aabhinavvvvvvv",
       "avatar_url": "https://github.com/aabhinavvvvvvv.png",
       "html_url": "https://github.com/aabhinavvvvvvv",
@@ -205,6 +223,6 @@
       "contributions": 1
     }
   ],
-  "updated_at": "2026-07-02T15:44:27Z",
-  "total": 34
+  "updated_at": "2026-07-18T15:54:07Z",
+  "total": 37
 }
